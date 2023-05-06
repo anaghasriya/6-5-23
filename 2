@@ -1,0 +1,22 @@
+    for p in range(2, MAX + 1):
+        if (prime[p] == True):
+            i = p * 2
+            while (i <= MAX):
+                prime[i] = False
+                i = i + p
+def solve(n):
+    count = 0
+    num = 1
+    total = 0
+
+    while (count < n):
+        if (prime[num]):
+            total = total + num
+            count = count + 1
+        num = num + 1
+
+    return total
+SieveOfEratosthenes()
+
+n = int(input())
+print(solve(n))
